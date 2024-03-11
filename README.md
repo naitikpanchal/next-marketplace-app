@@ -21,7 +21,7 @@ Marketplace - Full-stack e-commerce website with Next.js
 
 ## Project Description
 
-The purpose of this website is to create a online market place website where user can buy and sell products. We implemented server-side actions in Next.js and managing dababase with Prisma. User Authentication is handled using Next-auth, MongoDB Atlas and Google Login integration. Our project features anonymous shopping carts. Enhanced UI with Tailwind CSS and Daisy UI. We Deploy ou application on Vercel for seamless hosting. 
+The purpose of this website is to create a online market place website where user can buy and sell products. We implemented server-side actions in Next.js and managing dababase with Prisma. User Authentication is handled using Next-auth, MongoDB Atlas and Google Login integration. Our project features anonymous shopping carts. Enhanced UI with Tailwind CSS and Daisy UI. We Deploy our application on Vercel or Render for seamless hosting. 
 
 
 ##  List of Features by Members:
