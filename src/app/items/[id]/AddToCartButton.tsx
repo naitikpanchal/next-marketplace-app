@@ -23,9 +23,7 @@ export default function AddToCartButton({itemId, itemQuantity}: AddToCartButtonP
                     try {
                         await itemQuantity(itemId);
                         setSuccess(true);
-                
                         const promise = () => new Promise((resolve) => setTimeout(() => resolve({ name: 'Product' }), 300));
-                
                         toast.promise(promise, {
                             loading: 'Loading...',
                             success: (data: any) => {
@@ -44,7 +42,6 @@ export default function AddToCartButton({itemId, itemQuantity}: AddToCartButtonP
                             },
                         })
                     } catch (error) {
-                        console.error('Error adding product to cart:', error);
                         toast.error('Failed to add product to cart');
                     }
                 })
@@ -53,9 +50,7 @@ export default function AddToCartButton({itemId, itemQuantity}: AddToCartButtonP
                 Buy Now 
             </button>
             <Toaster position="bottom-right" expand={false} richColors/>
-            
             {isPending && <span className="loading loading-spinner loading-md" />}
-           
         </div>
     )
 

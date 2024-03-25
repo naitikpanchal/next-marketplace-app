@@ -20,7 +20,7 @@ async function addItem(formdata: FormData) {
     const shipping = formdata.get("shipping")?.toString() || "Not Available";
 
 
-    console.log({ name, description, imageUrl, price, condition, shipping });
+    // console.log({ name, description, imageUrl, price, condition, shipping });
     if (!name || !description || !imageUrl || !price || !condition || !shipping) {
         throw new Error("Missing required fields");
     }

@@ -1,9 +1,7 @@
 import { prisma } from "@/lib/db/prisma"
 import { notFound } from "next/navigation"
 import Image from 'next/image';
-// import { Metadata } from "next";
 import { cache } from "react";
-import Link from "next/link";
 
 interface ProfilePageProps{
     params: {
@@ -16,21 +14,6 @@ const getUser = cache(async (id:string) => {
     if (!user) notFound();
     return user;
 });
-
-// export async function generateMetaData(
-//     { params: {id}} : ProfilePageProps
-//     ): Promise<Metadata>{
-
-//     const user = await getUser(id);
-    
-//     return{
-//         title: user.name + " -marketplace",
-//         description: user.bio,
-//         openGraph:{
-//             images: [{url: user.image}],
-//         }
-//     }
-// }
 
 export default async function ProfilePage(
     {params:{id},

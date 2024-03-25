@@ -3,13 +3,10 @@ import { redirect } from 'next/navigation';
 import { prisma } from '@/lib/db/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/authOptions';
-// import { useRouter } from 'next/navigation'; // Updated import
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions);
-  // const router = useRouter();
   if (!session) {
     redirect('/login');
     return null;
@@ -31,7 +28,6 @@ export default async function ProfilePage() {
       <div>
         {session && (
           <div>
-             
             <div className="bg-white overflow-hidden shadow rounded-lg border">
               <div className="px-4 py-5 sm:px-6">
                 <h3 className="text-lg leading-6 font-medium text-gray-900">User Profile</h3>
@@ -63,7 +59,7 @@ export default async function ProfilePage() {
                 </dl>
               </div>
             </div>
-           </div>
+          </div>
         )}
       </div>
     );

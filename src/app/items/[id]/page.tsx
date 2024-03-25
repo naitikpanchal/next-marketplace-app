@@ -13,27 +13,12 @@ interface ItemPageProps{
         id: string,
     }
 }
-// type GenerateMetaDataFunction = (props: ItemPageProps) => Promise<Metadata>;
-
 
 const getItem = cache(async (id:string) => {
     const item = await prisma.item.findUnique({where: {id}})
     if (!item) notFound();
     return item;
 })
-
-// export async function generateMetaData(
-//     { params: {id}} : ItemPageProps
-//     ): Promise<Metadata>{
-//     const item = await getItem(id);    
-//     return{
-//         title: item.name + " -marketplace",
-//         description: item.description,
-//         openGraph:{
-//             images: [{url: item.imageUrl}],
-//         }      
-//     }
-// }
 
 export default async function ItemPage(
     {params:{id},
@@ -58,7 +43,6 @@ export default async function ItemPage(
                 {item.userId && (
                     <button className="btn btn-secondary"><Link href={`/profile/${item.userId}`}>View seller profile</Link></button>
                 )}
-                {/* <Link href={`/user/${item.userId}`}> View seller profile</Link> */}
                 <AddToCartButton 
                     itemId={item.id} 
                     itemQuantity={itemQuantity}/>

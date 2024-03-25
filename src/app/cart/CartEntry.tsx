@@ -13,9 +13,7 @@ export default function CartEntry(
     {cartItem :{item, quantity},
     setItemQuantity,
 }: CartEntryProps){
-
     const [isPending, startTransition] = useTransition();
-
     const quantityOptions: JSX.Element[] = [];
     for(let i = 0; i<=1; i++){
         quantityOptions.push(
@@ -48,8 +46,6 @@ export default function CartEntry(
                                 await setItemQuantity(item.id, newQuantity)
                             })
                         }}>
-                            
-                            {/*<option value={0}>0 (Remove)</option>*/}
                             {quantityOptions}
                     </select>
                     </div>

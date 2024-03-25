@@ -19,7 +19,6 @@ export type ShoppingCart = CartWithProducts & {
 
 export async function getCart(): Promise<ShoppingCart|null>{
     const session = await getServerSession(authOptions);
-    console.log("session: "+ JSON.stringify(session));
     let cart: CartWithProducts | null = null;
     
     if(session){

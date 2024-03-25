@@ -3,7 +3,6 @@ import { env } from "@/lib/env";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 import { Adapter } from "next-auth/adapters";
-import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google";
 import bcryptjs from 'bcryptjs';
@@ -24,7 +23,6 @@ export const authOptions: NextAuthOptions = {
               password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
-              console.log(credentials);
               const email = credentials?.email;
               const password = credentials?.password;
                 
@@ -42,13 +40,10 @@ export const authOptions: NextAuthOptions = {
                 return null;
               }
               const isMatch = user && bcryptjs.compareSync(password, user.password);
-              console.log(isMatch);
               if (isMatch)
               {
-                console.log("existingUser: "+ JSON.stringify(user));
                 return user;
-              }            
-              // Return null if user data could not be retrieved
+              }
               return null
             }
           })],

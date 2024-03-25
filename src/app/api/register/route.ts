@@ -4,7 +4,7 @@ import bcryptjs from 'bcryptjs';
 
 
 export async function POST(request: NextRequest) {
-  try {
+    try {
     const reqBody = await request.json();
     const { name, email, password, phone } = reqBody;
 
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
             },
         });
         return NextResponse.json({ message: 'User registered successfully',success:true ,user: newUser }, { status: 200});
-  } catch (error: any) {
+    } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+    }
 }

@@ -32,9 +32,7 @@ const RegistrationForm = () => {
       });
       setCreatingUser(false);
       setUserCreated(true);
-      console.log(response.data);
       if(response.status === 200 || response.status === 201) {
-        console.log('Registration successful');
         toast.success(`User has been registered!`,
           {
             style: {
@@ -54,7 +52,6 @@ const RegistrationForm = () => {
         setPhone('');
       }
     } catch (error) {
-      console.error(error);
       setError(true);
       toast.error('Failed to Register the user!');
     }

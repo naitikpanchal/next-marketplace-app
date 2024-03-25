@@ -1,7 +1,6 @@
 "use client"
 import { Session } from "next-auth";
 import Link from "next/link";
-// import profilePic from "@/assets/profile-svgrepo-com.png";
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
@@ -12,10 +11,7 @@ type UserProfileButtonProps = {
 
 export default function UserProfileButton({session} : UserProfileButtonProps) {
     const user = session?.user;
-    console.log("user from UserProfileButton: "+user);
-    console.log(user);
-
-  return (
+    return (
     <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost ">
             {user ? ( <><Image 
@@ -52,5 +48,5 @@ export default function UserProfileButton({session} : UserProfileButtonProps) {
         </ul>) : (<></>)
         }
     </div>
-  );
+    );
 }

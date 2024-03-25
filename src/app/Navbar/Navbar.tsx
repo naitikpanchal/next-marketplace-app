@@ -10,18 +10,15 @@ import { getCart } from "@/lib/db/cart";
 
 async function searchItems(formData: FormData){
     "use server";
-
     const searchQuery = formData.get("searchQuery")?.toString();
-
     if (searchQuery) {
         redirect("/search?query=" + searchQuery);
-    }   
+    }
 }
 
 export default async function Navbar() {
 
     const cart = await getCart();
-
     const session = await getServerSession(authOptions);
 
     return (
