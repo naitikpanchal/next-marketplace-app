@@ -1,8 +1,11 @@
 # Visit Site Live on Vercel
 [Marketplace-app](https://marketplace-app-dusky.vercel.app/)
 
+### Use Google account or Try This credentials
+email: naitik@gmail.com
+pass: naitik
 
-## Team  
+## Team
 Team Name - Web Weavers
 
 ## Group Members
@@ -34,7 +37,7 @@ The purpose of this website is to create a online market place website where use
 - User Registration and Login
 - Dashboard
 - Database connectivity
-- Next Auth
+- Next Auth (OAuth)
 - User Profile in app
 
 ### Rutwa Dave
@@ -55,7 +58,7 @@ The purpose of this website is to create a online market place website where use
 
 ## Database
 
-Schema designed by all members together as per need of project.
+Schema designed and edited by all members together as per need of project.
 
 ## Getting Started
 
